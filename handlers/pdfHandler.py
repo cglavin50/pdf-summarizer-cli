@@ -13,14 +13,6 @@ def extractText(filename, minPage = 0, maxPage = 0, dst = ""):
     for i in range(minPage, maxPage):
         page = reader.pages[i]
         text += page.extract_text()
-        
-    # write text to destination file
-    if dst == "": # print to CLI
-        print(text, flush = True)
-    else:
-        file = open(dst, 'w')
-        count = file.write(text)
-        if count == 0:
-            raise Exception("Error, no text was found from the PDF provided. Exiting...")
-        file.close()
+
+    return text
 # end extractText function

@@ -3,7 +3,7 @@ from PyPDF2 import PdfReader
 def extractText(filename, minPage = 0, maxPage = 0, dst = ""):
     reader = PdfReader(filename)
     text = ""
-    max = maxPage = len(reader.pages)
+    max = len(reader.pages)
     
     # assign pages to extract from
     if maxPage == 0 or maxPage > max:

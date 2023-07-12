@@ -31,10 +31,11 @@ def summarizeText(docs): # takes in an array of documents
     chain = load_summarize_chain(
         llm = llm, 
         chain_type = "refine",
-        return_intermediate_steps= True,
+        return_intermediate_steps= False,
         question_prompt = prompt,
         refine_prompt = refine_prompt
     )
     
     output_summary = chain({"input_documents": docs}, return_only_outputs = True)
+    print(len(output_summary))
     return textwrap.fill(output_summary, width=100, break_long_words=False, replace_whitespace=False)

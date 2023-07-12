@@ -15,3 +15,26 @@ A CLI tool written in Python to summarize PDF's text. Uses Python's PyPDF packag
     - First build out PDF capabilities, then expand from there
     - Using LangChain Document loaders
     - rm pdfHandler?
+
+### Latest Error
+
+ python3 main.py -f ./examples/AirControlSatia.pdf -start 2 -dst ./examples/summary
+1
+Traceback (most recent call last):
+  File "/home/cglavin50/coding-work/pdf-summarizer-cli/main.py", line 24, in <module>
+    main()
+  File "/home/cglavin50/coding-work/pdf-summarizer-cli/main.py", line 13, in main
+    summary = summarizeText(text)
+  File "/home/cglavin50/coding-work/pdf-summarizer-cli/handlers/chatGPTHandler.py", line 41, in summarizeText
+    return textwrap.fill(output_summary, width=100, break_long_words=False, replace_whitespace=False)
+  File "/usr/lib/python3.10/textwrap.py", line 399, in fill
+    return w.fill(text)
+  File "/usr/lib/python3.10/textwrap.py", line 371, in fill
+    return "\n".join(self.wrap(text))
+  File "/usr/lib/python3.10/textwrap.py", line 359, in wrap
+    chunks = self._split_chunks(text)
+  File "/usr/lib/python3.10/textwrap.py", line 345, in _split_chunks
+    text = self._munge_whitespace(text)
+  File "/usr/lib/python3.10/textwrap.py", line 154, in _munge_whitespace
+    text = text.expandtabs(self.tabsize)
+AttributeError: 'dict' object has no attribute 'expandtabs'

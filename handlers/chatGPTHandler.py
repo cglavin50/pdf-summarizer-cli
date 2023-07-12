@@ -1,9 +1,7 @@
 import textwrap
-from langchain import OpenAI, PromptTemplate, LLMChain
-from langchain.text_splitter import CharacterTextSplitter
+from langchain import OpenAI, PromptTemplate
 from langchain.chains.summarize import load_summarize_chain
 from langchain.prompts import PromptTemplate
-from langchain.docstore.document import Document
 import os
 
 prompt_template = """Please summarize the following text:\n{text}"""
@@ -26,18 +24,8 @@ refine_prompt = PromptTemplate(
 
 
 def summarizeText(docs): # takes in an array of documents
-    
     llm = OpenAI(openai_api_key=os.environ["OPENAI_API_KEY"], temperature = 0.3) # currently liking some variability, needs to be initialized on function call otherwise the environment var hasn't been established yet
-    '''
-    text_splitter = CharacterTextSplitter(chunk_size=3000)
-    
-    print(len(text))
-    texts = text_splitter.split_text(text)
-    print(len(texts))
-    '''
-    docs = [Document(page_content=t) for t in texts]
-    
-    print(len(docs))
+    # print(len(docs))
     
     # summarize_prompt = PromptTemplate(template = prompt, input_variables=["text"])
     chain = load_summarize_chain(

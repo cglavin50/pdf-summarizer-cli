@@ -11,8 +11,8 @@ def extractArgs():
     
     
     fileName = ''
-    startPage = 0
-    endPage = 0
+    startPage = 1
+    endPage = -1
     dstName = ''
     
     for i in range(1, length-1):

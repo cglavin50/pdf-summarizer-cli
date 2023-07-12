@@ -1,5 +1,5 @@
 from handlers.cliHandler import extractArgs
-from handlers.pdfHandler import extractText
+from handlers.fileHandler import extractText
 from handlers.chatGPTHandler import summarizeText
 from dotenv import load_dotenv
 
@@ -9,8 +9,8 @@ load_dotenv('./.env', verbose=True)
 def main():
     fileName, dst, startNum, endNum = extractArgs()
     text = extractText(fileName, startNum, endNum)
+    
     summary = summarizeText(text)
-    summary = text
     if dst == "": # print to CLI
         print(summary, flush = True)
     else:

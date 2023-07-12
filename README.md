@@ -11,3 +11,7 @@ A CLI tool written in Python to summarize PDF's text. Uses Python's PyPDF packag
     - They are array of characters (same as C), so appending not useable. Instead maybe create a string for each page? Or an array of strings?
 - Likely not needed, but could investigate use of concurrency when extracting text from PDF's. As we go on a per-page basis, we could have multiple threads reading different pages to optimize
     - Becomes more important after I map this to a web application
+- Likely switching to have flow come from fileHandler instead of PDF handler
+    - First build out PDF capabilities, then expand from there
+    - Using LangChain Document loaders
+    - rm pdfHandler?

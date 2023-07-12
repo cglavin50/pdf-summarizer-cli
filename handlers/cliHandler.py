@@ -1,13 +1,13 @@
 import sys
 
-helpText = 'This tool is used to extract text from a PDF and print/save it to a file.'
+helpText = '''This tool is used to extract text from a file, summarize it using OpenAI's LLM model, and print/save it to a file. Supported file types: TXT, PDF, CSV, MD, JSON.'''
 helpText += '\nCommand-Line args required: -f filePath\nOptional Command-Line args: -start startingPageNum -end endingPageNum -d dstFile'
 
 def extractArgs():
     length = len(sys.argv)
     if length < 2:
         print(helpText)
-        exit
+        exit() 
     
     
     fileName = ''

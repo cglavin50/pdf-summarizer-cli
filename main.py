@@ -10,7 +10,7 @@ def main():
     fileName, dst, startNum, endNum = extractArgs()
     text = extractText(fileName, startNum, endNum)
     summary = summarizeText(text)
-    
+    summary = text
     if dst == "": # print to CLI
         print(summary, flush = True)
     else:
@@ -20,3 +20,5 @@ def main():
             raise Exception("Error, no text was found from the PDF provided. Exiting...")
         file.close()
     
+    
+main()

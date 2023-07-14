@@ -1,6 +1,6 @@
 # pdf-summarizer-cli
 
-A CLI tool written in Python to summarize PDF's text. Uses Python's PyPDF package to open and extract the text, and LangChain to use OpenAI's GPT-3.5 Turbo model for the backing LLM. Refine-chaining is used to minimize information loss and maximize correctness of summaries.
+A CLI tool written in Python to summarize PDF's text. Showcases LangChains map-reduce and refine chaining schemes to summarize longer pieces of text when stuffing isn't an option.
 
 ## To Do
 
